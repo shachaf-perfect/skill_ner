@@ -34,6 +34,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     data_files=gen_data_files('.'),
+    package_dir={'': '.'},
     install_requires=dependencies,
     classifiers=[
         "Programming Language :: Python :: 3",
