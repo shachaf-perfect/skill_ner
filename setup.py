@@ -1,5 +1,3 @@
-import os
-
 import setuptools
 
 
@@ -12,14 +10,6 @@ dependencies = [
     "ipython"
 ]
 
-def gen_data_files(*dirs):
-    results = []
-
-    for src_dir in dirs:
-        for root,dirs,files in os.walk(src_dir):
-            results.append((root, map(lambda f:root + "/" + f, files)))
-    return results
-
 setuptools.setup(
     name="skillner",
     version="0.0.1",
@@ -31,20 +21,3 @@ setuptools.setup(
     keywords=["skillner", 'python', 'NLP', "NER", "skills-extraction", "job-description"],
     install_requires=dependencies,
 )
-
-
-# setup(
-#     name='talentfabric-core',
-#     version='0.4.0',
-#     license='MIT',
-#     author="Ariel Zadok",
-#     author_email='ariel.z@goperfectmatch.com',
-#     packages=find_packages('src'),
-#     package_dir={'': 'src'},
-#     url='https://github.com/TalentFabric/talentfabric-python-commons/talentfabric_core',
-#     keywords='talent id generator',
-#     install_requires=[
-#         'country-converter==0.7.4'
-#     ],
-#
-# )
