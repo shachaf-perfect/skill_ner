@@ -5,7 +5,7 @@
 import json
 import collections
 
-with open('./skill_ner/data/skill_db_relax_20.json', 'r+') as f:
+with open('./skillner/data/skill_db_relax_20.json', 'r+') as f:
     skills_db = json.load(f)
 
 
@@ -27,5 +27,5 @@ n_grams = [skills_db[key]['high_surfce_forms']['full']
            for key in skills_db if skills_db[key]['skill_len'] > 1]
 n_gram_dist = get_dist_new(n_grams)
 # save
-with open('./skill_ner/data/token_dist.json', 'w', encoding='utf-8') as f:
+with open('./skillner/data/token_dist.json', 'w', encoding='utf-8') as f:
     json.dump(n_gram_dist, f, ensure_ascii=False, indent=4)

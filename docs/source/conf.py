@@ -19,7 +19,7 @@
 
 import sys
 import pathlib
-project = 'skill_ner'
+project = 'skillner'
 copyright = '2021, Anas AIT AOMAR & Badr MOUFAD'
 author = 'Anas AIT AOMAR & Badr MOUFAD'
 

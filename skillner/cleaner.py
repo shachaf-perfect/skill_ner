@@ -278,7 +278,7 @@ class Cleaner:
 
         Examples
         -------
-        >>> from skill_ner.cleaner import Cleaner
+        >>> from skillner.cleaner import Cleaner
         >>> cleaner = Cleaner(
                         to_lowercase=True,
                         include_cleaning_functions=["remove_punctuation", "remove_extra_space"]

@@ -8,9 +8,9 @@ import re
 import collections
 import json
 
-with open('./skill_ner/data/skills_processed.json', 'r+') as f:
+with open('./skillner/data/skills_processed.json', 'r+') as f:
     SKILL_DB = json.load(f)
-with open('./skill_ner/data/token_dist.json', 'r+') as f:
+with open('./skillner/data/token_dist.json', 'r+') as f:
     dist = json.load(f)
 RELAX_PARAM = 0.2
 new_skill_db = {}
@@ -130,5 +130,5 @@ for key in new_skill_db:
         new_skill_db[key]['low_surface_forms'] = skill_low
 
 # save
-with open('./skill_ner/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
+with open('./skillner/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
     json.dump(new_skill_db, f, ensure_ascii=False, indent=4)

@@ -81,8 +81,8 @@ class SkillExtractor:
         --------
         >>> import spacy
         >>> from spacy.matcher import PhraseMatcher
-        >>> from skill_ner.skill_extractor_class import SkillExtractor
-        >>> from skill_ner.general_params import SKILL_DB
+        >>> from skillner.skill_extractor_class import SkillExtractor
+        >>> from skillner.general_params import SKILL_DB
         >>> nlp = spacy.load('en_core_web_sm')
         >>> skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
         loading full_matcher ...

@@ -14,7 +14,7 @@
 this is step is simple we just ctockenize text to get the dist for each token in our skills db
 
 ```python
-with open('skill_ner/data/skills_processed.json', 'r+') as f:
+with open('skillner/data/skills_processed.json', 'r+') as f:
     skills_db = json.load(f)
 
 
@@ -35,7 +35,7 @@ n_grams = [skills_db[key]['skill_cleaned']
            for key in skills_db if skills_db[key]['skill_len'] > 1]
 n_gram_dist = get_dist_new(n_grams)
 # save
-with open('skill_ner/data/token_dist.json', 'w', encoding='utf-8') as f:
+with open('skillner/data/token_dist.json', 'w', encoding='utf-8') as f:
     json.dump(n_gram_dist, f, ensure_ascii=False, indent=4)
 ```
 ## 3. create skill_db_relax_20.json
@@ -50,9 +50,9 @@ import re
 import collections
 import json
 
-with open('skill_ner/data/skills_processed.json', 'r+') as f:
+with open('skillner/data/skills_processed.json', 'r+') as f:
     SKILL_DB = json.load(f)
-with open('skill_ner/data/token_dist.json', 'r+') as f:
+with open('skillner/data/token_dist.json', 'r+') as f:
     dist = json.load(f)
 
 RELAX_PARAM = 0.2
@@ -183,7 +183,7 @@ for key in new_skill_db:
         new_skill_db[key]['low_surface_forms'] = skill_low
 
 # final save file 
-with open('skill_ner/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
+with open('skillner/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
     json.dump(new_skill_db, f, ensure_ascii=False, indent=4)
 ```
 

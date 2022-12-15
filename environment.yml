@@ -1,4 +1,4 @@
-name: skill_ner-dev-env
+name: skillner-dev-env
 channels:
   - conda-forge
 dependencies:

@@ -71,8 +71,8 @@ class Matchers:
 
         Examples
         --------
-        >>> from skill_ner.matcher_class import Matchers
-        >>> from skill_ner.general_params import SKILL_DB
+        >>> from skillner.matcher_class import Matchers
+        >>> from skillner.general_params import SKILL_DB
         >>> import spacy
         >>> from spacy.matcher import PhraseMatcher
         >>> nlp = spacy.load('en_core_web_sm')

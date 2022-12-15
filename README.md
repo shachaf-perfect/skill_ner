@@ -26,7 +26,7 @@ It is easy to get started with **SkillNer** and take advantage of its features.
 1. First, install **SkillNer** through the ``pip``
 
 ```bash
-pip install skill_ner
+pip install skillner
 ```
 
 2. Next, run the following command to install ``spacy en_core_web_lg ``
