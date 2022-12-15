@@ -33,7 +33,7 @@ setuptools.setup(
     # download_url='https://github.com/AnasAito/SkillNER/archive/refs/tags/v1.0.3.tar.gz',
     packages=setuptools.find_packages(),
     include_package_data=True,
-    data_files=gen_data_files('skillner'),
+    data_files=gen_data_files('.'),
     install_requires=dependencies,
     classifiers=[
         "Programming Language :: Python :: 3",
