@@ -22,6 +22,7 @@ setuptools.setup(
     url="https://github.com/shachaf-perfect/skill_ner.git",
     keywords=["skillner", 'python', 'NLP', "NER", "skills-extraction", "job-description"],
     install_requires=dependencies,
+    include_package_data=True
 )
 
 
