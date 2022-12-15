@@ -4,7 +4,7 @@ from nltk.stem import PorterStemmer
 # native packs
 from typing import List
 # my pack
-from skillNer.general_params import S_GRAM_REDUNDANT, LIST_PUNCTUATIONS
+from skill_ner.general_params import S_GRAM_REDUNDANT, LIST_PUNCTUATIONS
 
 
 # load nlp
@@ -278,7 +278,7 @@ class Cleaner:
 
         Examples
         -------
-        >>> from skillNer.cleaner import Cleaner
+        >>> from skill_ner.cleaner import Cleaner
         >>> cleaner = Cleaner(
                         to_lowercase=True,
                         include_cleaning_functions=["remove_punctuation", "remove_extra_space"]

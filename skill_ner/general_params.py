@@ -5,7 +5,7 @@ from posixpath import dirname
 # installed packs
 #
 # my packs
-from skillNer.network.remote_db import RemoteBucket
+from skill_ner.network.remote_db import RemoteBucket
 
 # mapping skill and color
 SKILL_TO_COLOR = {

@@ -14,15 +14,15 @@
 this is step is simple we just ctockenize text to get the dist for each token in our skills db
 
 ```python
-with open('./skillNer/data/skills_processed.json', 'r+') as f:
+with open('skill_ner/data/skills_processed.json', 'r+') as f:
     skills_db = json.load(f)
+
 
 def get_dist_new(array):
     words = []
     for val in array:
         vals = val.split(' ')
         for v in vals:
-
             words.append(v)
 
     a = words
@@ -35,12 +35,13 @@ n_grams = [skills_db[key]['skill_cleaned']
            for key in skills_db if skills_db[key]['skill_len'] > 1]
 n_gram_dist = get_dist_new(n_grams)
 # save
-with open('./skillNer/data/token_dist.json', 'w', encoding='utf-8') as f:
+with open('skill_ner/data/token_dist.json', 'w', encoding='utf-8') as f:
     json.dump(n_gram_dist, f, ensure_ascii=False, indent=4)
 ```
 ## 3. create skill_db_relax_20.json
 
-This script will generate the skill_db_relax_20.json i tried to document it so you can be able to modulate it for more redeability but what it do is some kind of data augmentation by generating surface forms for each skill . the augmentation is done given it len 
+This script will generate the skill_db_relax_20.json i tried to document it so you can be able to modulate it for more redeability but what it do is some kind of data augmentation by generating surface forms for each skill . the augmentation is done given it len
+
 ```python
 # ============
 # Script to generate skill db that support multiple surface forms for the matching procedure
@@ -49,9 +50,9 @@ import re
 import collections
 import json
 
-with open('./skillNer/data/skills_processed.json', 'r+') as f:
+with open('skill_ner/data/skills_processed.json', 'r+') as f:
     SKILL_DB = json.load(f)
-with open('./skillNer/data/token_dist.json', 'r+') as f:
+with open('skill_ner/data/token_dist.json', 'r+') as f:
     dist = json.load(f)
 
 RELAX_PARAM = 0.2
@@ -74,7 +75,6 @@ for key in SKILL_DB:
     # to increase proba of matching with natural text
 
     if abv != '':
-
         high_surface_form['abv'] = abv
     # unigram skills
     if skill_len == 1:
@@ -125,7 +125,6 @@ for key in new_skill_db:
         for a in unique:
             list_.append(a)
 
-
 counter = collections.Counter(list_)
 
 for key in new_skill_db:
@@ -141,7 +140,6 @@ for key in new_skill_db:
             else:
                 new_l.append(l)
         new_skill_db[key]['low_surface_forms'] = new_l
-
 
 # search for abreviation if found 'AQM (Advange quality mangement)' -> AQM 
 # step 1 extract susptible abv using regex 
@@ -185,7 +183,7 @@ for key in new_skill_db:
         new_skill_db[key]['low_surface_forms'] = skill_low
 
 # final save file 
-with open('./skillNer/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
+with open('skill_ner/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
     json.dump(new_skill_db, f, ensure_ascii=False, indent=4)
 ```
 

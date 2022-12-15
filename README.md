@@ -26,7 +26,7 @@ It is easy to get started with **SkillNer** and take advantage of its features.
 1. First, install **SkillNer** through the ``pip``
 
 ```bash
-pip install skillNer
+pip install skill_ner
 ```
 
 2. Next, run the following command to install ``spacy en_core_web_lg ``
@@ -55,17 +55,15 @@ We start first by importing modules, particularly spacy and SkillExtractor. Note
 
 **SKILL_DB** is SkillNer default skills database. It was built upon [EMSI skills database ](https://skills.emsidata.com/).
 
-
-
 ```python
 # imports
 import spacy
 from spacy.matcher import PhraseMatcher
 
 # load default skills data base
-from skillNer.general_params import SKILL_DB
+from skill_ner.general_params import SKILL_DB
 # import skill extractor
-from skillNer.skill_extractor_class import SkillExtractor
+from skill_ner.skill_extractor_class import SkillExtractor
 
 # init params of skill extractor
 nlp = spacy.load("en_core_web_lg")

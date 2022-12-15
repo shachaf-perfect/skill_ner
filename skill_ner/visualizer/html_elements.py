@@ -4,8 +4,8 @@ import random
 # installed packs
 from IPython.core.display import HTML
 # my packs
-from skillNer.visualizer.phrase_class import Phrase
-from skillNer.general_params import SKILL_TO_COLOR_TAILWIND
+from skill_ner.visualizer.phrase_class import Phrase
+from skill_ner.general_params import SKILL_TO_COLOR_TAILWIND
 
 
 def element(
